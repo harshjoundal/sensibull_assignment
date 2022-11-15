@@ -1,0 +1,33 @@
+
+.container{
+    width: 100%;
+    padding: 10px 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo>img{
+    /* border: 1px solid black; */
+    width: 150px;
+}
+/* .container>button{
+    padding: 0px 35px;
+    border:none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #006CE6;
+    color: white;
+    font-weight: 500;
+} */
+.login{
+    padding: 8px 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #006CE6;
+    color: white;
+    font-weight: 500;
+    /* height: 40px;    */
+}
