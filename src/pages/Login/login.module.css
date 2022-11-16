@@ -24,6 +24,7 @@
 .login input{
     width: 100%;
     padding: 10px;
+    font-size: 18px;
     border-radius: 10px;
     border: none;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -41,7 +42,9 @@
         margin-top: 1.5rem;
         /* height: 40px;    */
 }
-
+.login label {
+    font-size: 18px;
+}
 .login>button:hover {
     cursor: pointer;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;

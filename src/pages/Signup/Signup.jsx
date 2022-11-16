@@ -45,15 +45,15 @@ const Signup = () => {
         }}>
             <div>
                 <label>Username</label>
-                <input type="text" ref={nameRef} />
+                <input type="text" ref={nameRef} required/>
             </div>
             <div>
                 <label>Email</label>
-                <input type="text" ref={emailRef} />
+                <input type="email" ref={emailRef} required/>
             </div>
             <div>
                 <label>Password</label>
-                <input type="Password" ref={passRef}/>
+                <input type="Password" ref={passRef} required/>
             </div>
             <button type='submit'>Create account</button>
             <p><Link to={'/login'}>login</Link></p>
