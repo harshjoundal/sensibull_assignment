@@ -7,18 +7,31 @@
 }
 
 .table{
-    width: 80%;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;    margin: auto;
-    border-collapse: collapse;
-    border-radius: 10px;
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;    margin: auto;
+    /* border-collapse: collapse; */
+    border-radius: 16px;
 }
-
+thead>tr{
+    background-color: #006CE6;
+    color: white;
+    border-radius: 16px;
+}
 th,td{
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;   
-    padding: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;    */
+    padding: 16px 30px;
     font-size: 18px;
 
 }
+tbody tr:hover{
+    background-color: rgb(220, 218, 218); 
+    transition: 0.4s;
+}
+
+tr:nth-child(Even){
+    background-color: rgb(244, 244, 244);
+}
+
 
 .searchDiv{
     width: 60%;
@@ -37,9 +50,7 @@ th,td{
     border-radius: 8px;
     font-size: 16px;
     border: none;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-}
+box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;}
 .searchDiv>button{
     padding: 8px 35px;
     border: none;

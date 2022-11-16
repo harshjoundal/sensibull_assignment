@@ -1,0 +1,66 @@
+.container {
+    /* border: 1px solid; */
+    margin-top: 40px;
+}
+
+.login {
+    width: 30%;
+    margin: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.login>div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.login>button {
+    padding: 8px 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #006CE6;
+    color: white;
+    font-weight: 500;
+    transition: 0.5s;
+    margin-top: 1.5rem;
+    /* height: 40px;    */
+}
+
+.login>button:hover {
+    cursor: pointer;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.login a {
+    color: #006CE6;
+    transition: 2s;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+.container>a {
+    font-size: 20px;
+    display: flex;
+    gap: 8px;
+    margin-left: 20px;
+    transition: 0.5s;
+}

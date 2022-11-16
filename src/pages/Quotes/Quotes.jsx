@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import styles from './quotes.module.css'
+import Card from './../../components/Card'
 
 const Quotes = () => {
   const location = useLocation().pathname.split('/')[2];
@@ -30,22 +31,22 @@ const Quotes = () => {
     }
     else if(val === 'asc'){
       newData = newData.sort((a,b)=>{
-        a = a.time.split(' ')[1].split(':').join('')
-        b = b.time.split(' ')[1].split(':').join('')
+        a = Number(a.time.split(' ')[1].split(':').join(''))
+        b = Number(b.time.split(' ')[1].split(':').join(''))
         return a-b
       })
-      setData(newData)
+      setData([...newData])
     }
     else if(val === 'dec'){
       newData = newData.sort((a,b)=>{
-        a = a.time.split(' ')[1].split(':').join('')
-        b = b.time.split(' ')[1].split(':').join('')
+        a = Number(a.time.split(' ')[1].split(':').join(''))
+        b = Number(b.time.split(' ')[1].split(':').join(''))
         return b-a
       })
-      setData(newData)
+      setData([...newData])
     }
     
-    console.log(newData);
+    // console.log(newData);
   }
   
   
@@ -72,11 +73,7 @@ const Quotes = () => {
           {
             data.map((ele)=>(
               <li key={ele.time}>
-                <div className={styles.card}>
-                  <p>Price: {ele.price.toFixed(2)}</p>
-                  <p>Time: {ele.time} ({new Date(ele.time).toDateString()})</p>
-                  <p>Valid till: {ele.valid_till}</p>
-                </div>
+                <Card getdata={getData} price={ele.price} time={ele.time} validTill={ele.valid_till}/>
               </li>
             ))
           }
