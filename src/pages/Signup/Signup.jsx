@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './signup.module.css'
 import { IoMdArrowRoundBack } from 'react-icons/io';
@@ -9,8 +9,11 @@ const Signup = () => {
   const nameRef = useRef();
   const emailRef = useRef();
   const passRef = useRef();
-  const navigate = useNavigate()
-  const handleSignup= async()=>{
+  const navigate = useNavigate();
+  const [loading,setLoading] = useState(false)
+  
+const handleSignup= async()=>{
+    setLoading(true);
     let data = {
         username: nameRef.current.value,
         email: emailRef.current.value,
@@ -28,6 +31,7 @@ const Signup = () => {
     .then((res)=>res.json())
     .then((res)=>{
         alert('Account created successfully!')
+        setLoading(false);
         navigate('/login')
         
     })
@@ -56,6 +60,7 @@ const Signup = () => {
                 <input type="Password" ref={passRef} required/>
             </div>
             <button type='submit'>Create account</button>
+            {loading && <span><h3>Loading...</h3></span>}
             <p><Link to={'/login'}>login</Link></p>
 
         </form>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { json, Link, useNavigate } from 'react-router-dom'
 import styles from './login.module.css'
 import { IoMdArrowRoundBack } from 'react-icons/io';
@@ -12,6 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
   const state = useSelector(state=>state);
   const dispatch = useDispatch()
+  const [loading,setLoading] = useState(false)
 
 
 const handleLogin = async ()=>{
@@ -21,6 +22,7 @@ const handleLogin = async ()=>{
     }
     // console.log(data);
     try{
+      setLoading(true)
       let res = fetch('https://customloginapi.vercel.app/users/login',{
         method:"POST",
         headers:{
@@ -31,12 +33,14 @@ const handleLogin = async ()=>{
       .then((res)=>{
         if(res.status==400){
           alert('Wrong password or email!');
+          setLoading(false)
           return;
         }
         return res.json()
       })
       .then((res)=>{
         dispatch({type:'login',payload:res})
+        setLoading(false)
         navigate('/')
       })
       .catch((err)=>{
@@ -70,6 +74,7 @@ const handleLogin = async ()=>{
                 <input type="Password" ref={passwordRef}/>
             </div>
             <button type='submit'>Login</button>
+            {loading && <span><h3>Loading...</h3></span>}
         <p>Don't have account? <Link to={'/signup'}>Signup</Link></p>
         </form>
     </div>
