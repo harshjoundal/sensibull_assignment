@@ -62,3 +62,14 @@
     margin-left: 20px;
     transition: 0.5s;
 }
+
+@media screen and (max-width:769px) {
+    .login{
+        width: 70%;
+    }
+}
+@media screen and (max-width:481px) {
+    .login{
+        width: 85%;
+    }
+}
